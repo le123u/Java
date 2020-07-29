@@ -13,6 +13,7 @@ public class TestStudent {
         map.put(new Student("lisi",15),"葫芦岛");
         map.put(new Student("wangwu",16),"大连");
         map.put(new Student("zhaoliu",17),"营口");
+        map.put(new Student("zhaoliu",17),"营口");
 
         // 遍历
         for(Student key : map.keySet()){
