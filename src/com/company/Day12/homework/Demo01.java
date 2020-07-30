@@ -1,4 +1,4 @@
-package com.company.D12.homework;
+package com.company.Day12.homework;
 
 public class Demo01 {
     private char value[];
