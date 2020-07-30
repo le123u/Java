@@ -32,7 +32,7 @@ public class TestCar {
         Iterator<Map.Entry<Car, Integer>> iterator = entrySet.iterator();
         while(iterator.hasNext()){
             Map.Entry<Car, Integer> next = iterator.next();
-            System.out.println(next.getKey() + "" + next.getValue());
+            System.out.println(next.getKey() + "---" + next.getValue());
         }
 
 
