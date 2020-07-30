@@ -24,8 +24,9 @@ public class Demo03 {
             }
         };
 
+        // 第二个参数是排序规则
         Arrays.sort(array, comp);
-        
+
         for(Person person : array){
             System.out.println(person);
         }
