@@ -1,4 +1,4 @@
-package com.company;
+package com.company.zhouce;
 
 public class Demo {
     public static void main(String[] args) {

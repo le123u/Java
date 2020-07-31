@@ -1,4 +1,8 @@
-package com.company;
+package com.company.zhouce;
+
+import com.company.zhouce.Circle;
+import com.company.zhouce.Rectangle;
+import com.company.zhouce.Shape;
 
 public class Test {
     public static void main(String[] args) {

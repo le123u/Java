@@ -1,4 +1,4 @@
-package com.company;
+package com.company.zhouce;
 
 public class Rectangle extends Shape {
     private int length;

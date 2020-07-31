@@ -1,4 +1,4 @@
-package com.company;
+package com.company.zhouce;
 
 public abstract class Shape {
     private double area;

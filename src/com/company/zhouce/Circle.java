@@ -1,4 +1,4 @@
-package com.company;
+package com.company.zhouce;
 
 public class Circle extends Shape {
 
