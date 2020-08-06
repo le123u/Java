@@ -45,7 +45,7 @@ public class JDBCDemoShiWu {
                     conn.rollback();
                 }
             }catch (SQLException e1){
-                e1.printStackTrace(); 
+                e1.printStackTrace();
             }
             e.printStackTrace();
         }finally {
