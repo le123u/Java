@@ -1,4 +1,4 @@
-package com.company.Day20.jdbc.empselectDemo.domain;
+package com.company.Day20.jdbc.JDBCJDBC.domain;
 
 import java.util.Date;
 
@@ -19,7 +19,17 @@ public class Emp {
 
     }
 
-    // get set
+    public Emp(Integer id, String ename, String job, Integer mgr, Date hiredate, Integer salary, Integer bonus, Integer deptno) {
+        this.id = id;
+        this.ename = ename;
+        this.job = job;
+        this.mgr = mgr;
+        this.hiredate = hiredate;
+        this.salary = salary;
+        this.bonus = bonus;
+        this.deptno = deptno;
+    }
+// get set
 
     public Integer getId() {
         return id;
