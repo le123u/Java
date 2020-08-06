@@ -20,7 +20,7 @@ public class JDBCUtils {
         try{
             // 1.加载配置文件
             Properties pro = new Properties();
-            pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream("druid.propeties"));
+            pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties"));
             // 2.获取定义成员变量
             ds = DruidDataSourceFactory.createDataSource(pro);
         }catch(IOException e){

@@ -1,13 +1,13 @@
-package com.company.Day20.jdbc.JDBCJDBC.domain;
+package com.company.Day21.JDBC;
 
 
 //import com.company.jdbc.empselectDemo.domain.Emp;
 
+import com.company.Day20.jdbc.JDBCJDBC.domain.Emp;
 import com.company.Day21.JDBC.utils.JDBCUtils;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class JDBCEmp {
@@ -103,7 +103,7 @@ public class JDBCEmp {
             conn = JDBCUtils.getConnection();
 
             stmt = conn.createStatement();
-
+             list = new ArrayList<>();
             rs = stmt.executeQuery(sql);
                 while(rs.next()){
                     int empno = rs.getInt("EMPNO");

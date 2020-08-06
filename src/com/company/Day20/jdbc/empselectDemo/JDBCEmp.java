@@ -1,9 +1,9 @@
-package com.company.Day20.jdbc.JDBCJDBC.domain;
+package com.company.Day20.jdbc.empselectDemo;
 
 
 //import com.company.jdbc.empselectDemo.domain.Emp;
 
-import com.company.Day21.JDBC.utils.JDBCUtils;
+import com.company.Day20.jdbc.JDBCJDBC.domain.Emp;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,12 +15,13 @@ public class JDBCEmp {
         // 定义一个方法 查询emp表中所有的数据
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入sql语句:");
-        String s = scanner.nextLine();
-        // ArrayList<Emp> emps = new JDBCEmp().findAll(s);
-        ArrayList<Emp> emps = new JDBCEmp().findaAllUseJDBCUtils(s);
+        String s = scanner.nextLine().toLowerCase();
+        String[] split = s.split(" ");
+        ArrayList<Emp> emps = new JDBCEmp().findAll(s);
+        if(split[0].equals("select")){
             for(Emp emp:emps){
                 System.out.println(emp);
-
+            }
         }
     }
     public ArrayList<Emp> findAll(String s){
@@ -90,38 +91,7 @@ public class JDBCEmp {
         }
         return list;
     }
-    /**
-     * 演示JDBCUtils
-     */
-    public ArrayList<Emp> findaAllUseJDBCUtils(String s){
-        Connection conn = null;
-        Statement stmt = null;
-        ResultSet rs = null;
-        ArrayList<Emp> list = null;
-        String sql = s;
-        try{
-            conn = JDBCUtils.getConnection();
-
-            stmt = conn.createStatement();
-
-            rs = stmt.executeQuery(sql);
-                while(rs.next()){
-                    int empno = rs.getInt("EMPNO");
-                    String ename = rs.getString("ENAME");
-                    String job = rs.getString("JOB");
-                    int mgr = rs.getInt("MGR");
-                    Date hiredate = rs.getDate("HIREDATE");
-                    int sal = rs.getInt("SAL");
-                    int comm = rs.getInt("COMM");
-                    int deptno = rs.getInt("DEPTNO");
-                    list.add(new Emp(empno,ename,job,mgr,hiredate,sal,comm,deptno));
-                }
-
-        }catch(SQLException e){
-            e.printStackTrace();
-        }
-
-
-        return list;
+    public List<Emp> findaAllUseJDBCUtils(){
+        return null;
     }
 }
