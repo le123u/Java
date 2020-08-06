@@ -36,12 +36,13 @@ public class JDBCLoginDemo {
         ResultSet rs = null;
         try{
             conn = JDBCUtils.getConnection();
-            String sql = "select * from user userName = " +
-                    "'" +userName+ "'and passWord = '" +passWord+"'";
+            String sql = "select * from user where userName = '" +
+                    userName+ "'" + "and passWord = " +"'"+passWord+"'";
+            System.out.println(sql);
 //            StringBuilder sql2 = new StringBuilder("select * from user userName ='")
 //                    .append(userName).append("'and passWord='").append(passWord).append("'")
 
-             stmt = conn.createStatement();
+            stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
             return rs.next(); //如果有下一行 返回true
 
