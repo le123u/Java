@@ -2,10 +2,7 @@ package com.company.Day21.JDBC;
 
 import com.company.Day21.JDBC.demo.JDBCUtils;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
 
 public class JDBCLoginDemo {
@@ -17,7 +14,8 @@ public class JDBCLoginDemo {
         System.out.println("请输入您的密码：");
         String passWord = sc.nextLine();
 
-        boolean flag = new JDBCLoginDemo().login(userName, passWord);
+        // boolean flag = new JDBCLoginDemo().login(userName, passWord);
+        boolean flag = new JDBCLoginDemo().login2(userName, passWord);
         if (flag){
             System.out.println("登录成功");
         }else{
@@ -52,5 +50,36 @@ public class JDBCLoginDemo {
             JDBCUtils.close(rs,stmt,conn);
         }
        return false;
+    }
+    public boolean login2(String userName,String passWord){
+        // 判断是否为空
+        if (userName == null || passWord == null){
+            return false;
+        }
+        Connection conn = null;
+        PreparedStatement prestmt = null;
+        ResultSet rs = null;
+        try{
+            conn = JDBCUtils.getConnection();
+            String sql = "select * from user where userName = ? and passWord = ?";
+            System.out.println(sql);
+//            StringBuilder sql2 = new StringBuilder("select * from user userName ='")
+//                    .append(userName).append("'and passWord='").append(passWord).append("'")
+
+            prestmt = conn.prepareStatement(sql);
+
+            // 给？赋值
+            prestmt.setString(1,userName);
+            prestmt.setString(2,passWord);
+
+            rs = prestmt.executeQuery();
+            return rs.next(); //如果有下一行 返回true
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.close(rs,prestmt,conn);
+        }
+        return false;
     }
 }
