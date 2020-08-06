@@ -16,7 +16,14 @@ public class JDBCEmp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入sql语句:");
         String s = scanner.nextLine();
+        // String s1 = s.toLowerCase();
+        // String[] split = s.split(" ");
         // ArrayList<Emp> emps = new JDBCEmp().findAll(s);
+//        if(split[0].equals("select")){
+//            for(Emp emp:emps){
+//                System.out.println(emp);
+//            }
+//        }
         ArrayList<Emp> emps = new JDBCEmp().findaAllUseJDBCUtils(s);
             for(Emp emp:emps){
                 System.out.println(emp);
