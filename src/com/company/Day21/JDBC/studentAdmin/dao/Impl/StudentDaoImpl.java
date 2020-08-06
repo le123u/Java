@@ -46,11 +46,11 @@ public class StudentDaoImpl implements StudentDao {
         Statement stmt = null;
         try {
             conn = JDBCUtils.getConnection();
-            String sql = "insert into studentManage values (2,'王五','男',35,'葫芦岛','182000');";
+            String sql = "insert into studentManage values (6,'王五','男',35,'葫芦岛','182000');";
             stmt = conn.createStatement();
             int count = stmt.executeUpdate(sql);
-            //System.out.println(count);
-            System.out.println("aaaaaaaaaaaaaa");
+            System.out.println(count);
+
         } catch (Exception e) {
             e.printStackTrace();
         }finally {

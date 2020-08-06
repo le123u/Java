@@ -16,7 +16,7 @@ public class MainStudent {
             System.out.println(s);
         }
         System.out.println("---------保存学生----------");
-        Student student = new Student(1, "张三", "男", 40, "锦州", "1390000");
+        Student student = new Student();
         studentDao.save(student);
 
         System.out.println("---------修改学生----------");
